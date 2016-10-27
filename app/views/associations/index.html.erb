@@ -1,0 +1,37 @@
+<h1>Associations#index</h1>
+
+<%= link_to "Nueva Empresa", new_association_path %>
+
+<% if @empresas.blank? %>
+	<p style="color:red">No hay elementos en la base de datos </p>
+<% else %>
+	<p style="color:blue">Hay elementos</p>
+
+
+					<table>
+						<thead>
+							<tr>
+						        <th>ID</th>
+								<th>Nombre</th>
+								<th>Contacto</th>
+								<th>Telefono</th>
+								<th>Correo Electronico</th>
+								<th>Opciones</th>
+							</tr>
+						</thead>
+					</tbody>
+						<% @empresas.each do |e| %>
+						<tr>
+					        <td><%= e.id %></td>
+							<td><%= e.nombre %></td>
+							<td><%= e.contacto %></td>
+							<td><%= e.telefono %></td>
+							<td><%= e.correo_electronico %></td>
+							<td><%= link_to "[Mostrar]", association_path(e) %><%= link_to "[Editar]", edit_association_path(e) %></td>
+							<!-- para ver el path de editar, mostrar o eliminar, hacer rake routes en la consola -->
+
+						</tr>
+				<% end %>
+			</tbody>
+		</table>
+<% end %>
