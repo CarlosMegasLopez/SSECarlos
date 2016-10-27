@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+.banner{
+	height: 35px;
+	background: blue;
+}
+
+.menus{
+	height: 105px;
+	background: brown;
+}
+
+.statusmenu{
+	height: 25px;
+	background: grey;
+}
+
+.status{
+	height: 25px;
+	background: green;
+}
+
+.sesion{
+	height: 35px;
+	background: red;
+}
+
+.footer{
+	background: #333333;
+	color: #f2f2f2;
+	height: 50px;
+}

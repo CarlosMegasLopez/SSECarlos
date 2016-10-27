@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-root 'home#index'
+ devise_for :users
+ namespace :admin do
+    resources :home, only:[:index]
+    resources :careers
+  end
+
+  root 'home#index'
 
 
 	

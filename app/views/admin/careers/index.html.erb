@@ -1,0 +1,44 @@
+<h1>Careers#index   <%= current_user.email if user_signed_in? %> </h1>
+
+<%= link_to "Nueva Carrera", new_admin_career_path %>
+
+<% if user_signed_in? %>
+  <li><%= link_to "[ Cerrar Sesión ]", destroy_user_session_path, method: :delete %></li>
+<% else %>
+  <li><%= link_to "[ Iniciar Sesión ]", new_user_session_path %></li>
+<% end %>
+
+<!---<%= link_to "[ Cerrar Sesión ]", destroy_user_session_path, method: :delete %> -->
+
+
+<% if @carreras.blank? %>
+	<p style="color:red">No hay elementos en la base de datos </p>
+<% else %>
+	<p style="color:blue">Hay elementos</p>
+
+
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+						        <th>ID</th>
+								<th>Descripción</th>
+								<th>Opciones</th>
+							</tr>
+						</thead>
+					</tbody>
+						<% @carreras.each do |e| %>
+						<tr>
+					        <td><%= e.id %></td>
+							<td><%= e.descripcion %></td>
+							<td><%= link_to "[Mostrar]", admin_career_path(e) %>
+							<%= link_to "[Editar]", edit_admin_career_path(e) %>
+							<%= link_to "[Eliminar]", admin_career_path(e), method: :delete, data: { confirm: '¿Eliminar Elemento?' } %></td>
+
+							<!-- para ver el path de editar, mostrar o eliminar, hacer rake routes en la consola -->
+						</tr>
+				<% end %>
+			</tbody>
+		</table>
+<% end %>
+
+
