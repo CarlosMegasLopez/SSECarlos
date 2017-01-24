@@ -1,0 +1,25 @@
+<h1>Mostrar Empresa</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @empresa.nombre %>
+</p>
+
+<p>
+  <strong>Contacto:</strong>
+  <%= @empresa.contacto %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @empresa.telefono %>
+</p>
+
+<p>
+  <strong>Correo Electronico:</strong>
+  <%= @empresa.correo_electronico %>
+</p>
+
+<%= link_to 'Volver al Formulario', admin_associations_path %>

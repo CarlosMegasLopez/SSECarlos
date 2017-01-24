@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Formulario Egresados</h1>
+
+<%= link_to 'Nuevo Egresado', new_admin_graduate_path, :class => 'btn btn-mini btn-success'  %>
+
+<% if @graduates.blank? %>
+  <p style="color:red">No hay elementos en la base de datos </p>
+<% else %>
+  <p style="color:blue">Hay elementos en la base de datos </p>
+
+
+<table class="graduatestable table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Carrera</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Colonia</th>
+                <th>Calle</th>
+                <th>Codigo Postal</th>
+                <th>Celular</th>
+                <th>Otro Telefono</th>
+                <th>Correo Electronico</th>
+                <th>Titulado</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+          </tbody>
+            <% @graduates.each do |e| %>
+            <tr>
+              <td><%= e.id %></td>
+              <td><%= e.career.descripcion %></td>
+              <td><%= e.nombre_completo_egresado %></td>
+              <td><%= e.sexo_egresado %></td>
+              <td><%= e.colonia_egresado %></td>
+              <td><%= e.calle_egresado %></td>
+              <td><%= e.codigo_postal_egresado %></td>
+              <td><%= e.celular_egresado %></td>
+              <td><%= e.otro_telefono_egresado %></td>
+              <td><%= e.correo_electronico_egresado %></td>
+              <td><%= e.status_egresado %></td>
+              <td><%= link_to "Mostrar", admin_graduate_path(e), :class => 'btn btn-mini btn-info' %>
+                  <%= link_to "Editar", edit_admin_graduate_path(e), :class => 'btn btn-mini btn-primary' %>
+                  <%= link_to "Eliminar", admin_graduate_path(e), :class => 'btn btn-mini btn-danger', method: :delete, data: { confirm: '¿Eliminar Elemento?' } %></td> 
+
+              <!-- para ver el path de editar, mostrar o eliminar, hacer rake routes en la consola -->
+
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
+

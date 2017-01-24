@@ -1,42 +1,10 @@
-<div class="menu">
-
-<% if user_signed_in? %>
- 		 <li><%= link_to "[ Cerrar Sesión ]", destroy_user_session_path, method: :delete %></li>
-	<% else %>
-  		<li><%= link_to "[ Iniciar Sesión ]", new_user_session_path %></li>
-	<% end %>
-	
-
-	<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-
-			<br>
-
-				<div class="row">
-					<div class="col-md-4">
-						<div class="menus"></div>
-					</div>
-				</div>
-
- 			<br>
-
- 				<div class="row">
-					<div class="col-md-4">
-						<div class="menus"></div>
-					</div>
-				</div>
-
-			<br>
-
- 				<div class="row">
-					<div class="col-md-4">
-						<div class="menus"></div>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-	</div>
+<div class="menus">
+    <%= link_to image_tag("inicio.jpg", alt: "logo"), root_path %> 
 </div>
+<div class="menus">
+	 <%= link_to image_tag("iniciosesion.jpg", alt: "logo"), new_user_session_path %>
+</div>
+<div class="menus">
+	<%= link_to image_tag("contacto.jpg", alt: "logo"), home_contacto_path %>
+</div>
+

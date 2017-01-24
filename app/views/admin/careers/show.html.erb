@@ -1,19 +1,12 @@
-<h1>Careers#show</h1>
+<h1>Mostrar Carreras</h1>
 
-<% if notice.present? %>
-	<%= notice %>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @carrera.descripcion %>
+</p>
 
 
-<table>
-	<thead>
-		<tr>
-			<th>Descripción</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><%= "#{@carrera.descripcion}" %></td>
-		</tr>
-	</tbody>
-</table>
+<%= link_to 'Volver al Formulario', admin_careers_path %>
+

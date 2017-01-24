@@ -1,0 +1,2 @@
+json.extract! graduate, :id, :career_id, :nombre_egresado, :apellido_paterno_egresado, :apellido_materno_egresado, :sexo_egresado, :colonia_egresado, :calle_egresado, :codigo_postal_egresado, :celular_egresado, :otro_telefono_egresado, :correo_electronico_egresado, :status_egresado, :created_at, :updated_at
+json.url graduate_url(graduate, format: :json)

@@ -1,0 +1,33 @@
+<div class="col-sm-3"></div>
+
+<div class="col-sm-6">
+
+<%= render "utilidades/errores", current_model: @generation %>
+
+<%= form_for(['admin', @generation], html: {class: 'form-horizontal'}) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :Carrera, class: 'col-sm-2 control-label' %>
+     <div class="col-sm-10" >   
+    <%= f.select :career_id, Career.all.map{|s| [s.descripcion, s.id]}, {} , class: 'form-control' %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :descripcion_generacion, class: 'col-sm-2 control-label' %>
+     <div class="col-sm-10" > 
+    <%= f.text_field :descripcion_generacion, class: 'form-control' %>
+  </div>
+  </div>
+
+<br>
+
+  <div class="actions">
+     <%= f.submit "Aceptar", :class => 'btn btn-mini btn-info' %>
+  </div>
+  
+<% end %>
+
+</div>
+
+<div class="col-sm-3"></div>

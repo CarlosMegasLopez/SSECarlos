@@ -7,19 +7,33 @@
 
     <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
   
   <%= render 'layouts/partials/banner' %>
-  <%= render 'layouts/partials/menu' %>
 
+  <!--
   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-   
-    <%= yield %>
-
+  <p class="alert"><%= alert %></p> 
+  -->
+  
+  <div class="menu">
+  <div class="container">
+    <div class="row">
+      <!-- Parte Izquierda -->
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <%= render 'layouts/partials/menu' %>
+      </div>
+      <!-- Parte Derecha -->
+      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+         <%= yield %>
+      </div>
+    </div>
+  </div>
+</div>
+  
   <%= render 'layouts/partials/footer' %>
 
   </body>

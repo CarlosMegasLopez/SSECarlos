@@ -1,0 +1,15 @@
+<h1>Mostrar Generación</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @generation.career.descripcion %>
+</p>
+
+<p>
+  <strong>Descripcion Generación:</strong>
+  <%= @generation.descripcion_generacion %>
+</p>
+
+<%= link_to 'Volver al Formulario', admin_generations_path %>

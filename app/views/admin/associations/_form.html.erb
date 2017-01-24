@@ -1,0 +1,48 @@
+<!-- este archivo se creo manualmente -->
+<div class="col-sm-3"></div>
+
+<div class="col-sm-6">
+
+<%= render "utilidades/errores", current_model: @empresa %>
+
+<%= form_for(['admin', @empresa], html: {class: 'form-horizontal'}) do |f| %> 
+	
+	 <div class="form-group">
+		<%= f.label :nombre, class: 'col-sm-2 control-label' %>
+		<div class="col-sm-10" >       
+		<%= f.text_field :nombre, class: 'form-control' %>  
+	</div>
+	</div>
+
+	 <div class="form-group">
+		<%= f.label :contacto, class: 'col-sm-2 control-label' %>  
+		<div class="col-sm-10" >      
+		<%= f.text_field :contacto, class: 'form-control'  %>  
+	</div>
+	</div>
+
+	 <div class="form-group">
+		<%= f.label :telefono, class: 'col-sm-2 control-label' %>  
+		<div class="col-sm-10">        
+		<%= f.text_field :telefono, class: 'form-control'  %>  
+	</div>
+	</div>
+
+	 <div class="form-group">
+		<%= f.label :correo_electronico, class: 'col-sm-2 control-label'  %> 
+		<div class="col-sm-10">          
+		<%= f.text_field :correo_electronico, class: 'form-control'  %>  
+	  </div>
+    </div>
+
+<br>
+
+	<div class="actions">
+	   <%= f.submit "Aceptar", :class => 'btn btn-mini btn-info' %>
+	</div>
+
+<% end %>
+
+</div>
+
+<div class="col-sm-3"></div>

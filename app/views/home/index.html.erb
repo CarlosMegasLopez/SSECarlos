@@ -1,0 +1,42 @@
+<br>
+
+<div id="carousel-example-generic" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+    <%= link_to image_tag("egresadosindex.jpg", alt: "...") %>
+      <div class="carousel-caption">
+         <h3 style="color:white">Bienvenido(a) al Sistema de Egresados de la UAA</h3>
+         <p>INICIO</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("principaluaa.jpg", alt: "...") %>
+      <div class="carousel-caption">
+         <h3 style="color:white">Universidad Americana de Acapulco</h3>
+         <p>Entrada y vista principal</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("bibliotecaUAA.jpg", alt: "...") %>
+      <div class="carousel-caption">
+         <h3 style="color:white">Biblioteca José Francisco Ruiz Massieu</h3>
+         <p>Santuario de estudios y conocimientos</p>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+

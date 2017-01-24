@@ -1,4 +1,9 @@
-class AssociationsController < ApplicationController
+class Admin::AssociationsController < ApplicationController
+
+ layout 'admininterface'
+
+ before_action :authenticate_user!
+
   def index
   	@empresas=Association.all
   	#consulta del modelo student (SELECT)
@@ -19,7 +24,7 @@ class AssociationsController < ApplicationController
   def create
   	@empresa=Association.new association_params 
   		if @empresa.save
-  			redirect_to @empresa, notice: "Empresa Creada"
+  			redirect_to ['admin', @empresa], notice: "Empresa Creada"
   		else
   			render :new
   		end
@@ -28,6 +33,22 @@ class AssociationsController < ApplicationController
   def show
   	@empresa= Association.find(params[:id])
   end
+
+ def update
+    @empresa=Association.find(params[:id])
+      if @empresa.update association_params
+        redirect_to ['admin', @empresa], notice: "Empresa Actualizada"
+      else
+        render :new
+      end
+  end
+
+  def destroy
+      @empresa = Association.find(params[:id])
+      @empresa.destroy
+      redirect_to admin_associations_path, notice: "Empresa Eliminada"
+  end
+
 
   private
   	def association_params

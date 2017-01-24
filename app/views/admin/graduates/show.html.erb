@@ -1,0 +1,55 @@
+<h1>Mostrar Egresado</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @graduate.career.descripcion %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @graduate.nombre_completo_egresado %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @graduate.sexo_egresado %>
+</p>
+
+<p>
+  <strong>Colonia:</strong>
+  <%= @graduate.colonia_egresado %>
+</p>
+
+<p>
+  <strong>Calle:</strong>
+  <%= @graduate.calle_egresado %>
+</p>
+
+<p>
+  <strong>Codigo postal:</strong>
+  <%= @graduate.codigo_postal_egresado %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @graduate.celular_egresado %>
+</p>
+
+<p>
+  <strong>Otro telefono:</strong>
+  <%= @graduate.otro_telefono_egresado %>
+</p>
+
+<p>
+  <strong>Correo electronico:</strong>
+  <%= @graduate.correo_electronico_egresado %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @graduate.status_egresado %>
+</p>
+
+<%= link_to 'Volver al Formulario', admin_graduates_path %>

@@ -1,14 +1,16 @@
-<h1>Associations#index</h1>
+<p id="notice"><%= notice %></p>
 
-<%= link_to "Nueva Empresa", new_association_path %>
+<h1>Formulario Empresas</h1>
+
+<%= link_to "Nueva Empresa", new_admin_association_path, :class => 'btn btn-mini btn-success' %>
 
 <% if @empresas.blank? %>
 	<p style="color:red">No hay elementos en la base de datos </p>
 <% else %>
-	<p style="color:blue">Hay elementos</p>
+	<p style="color:blue">Hay elementos en la base de datos</p>
 
 
-					<table>
+<table class="associationstable table table-hover table-striped">
 						<thead>
 							<tr>
 						        <th>ID</th>
@@ -27,7 +29,10 @@
 							<td><%= e.contacto %></td>
 							<td><%= e.telefono %></td>
 							<td><%= e.correo_electronico %></td>
-							<td><%= link_to "[Mostrar]", association_path(e) %><%= link_to "[Editar]", edit_association_path(e) %></td>
+							<td><%= link_to "Mostrar", admin_association_path(e), :class => 'btn btn-mini btn-info' %>
+							    <%= link_to "Editar", edit_admin_association_path(e), :class => 'btn btn-mini btn-primary' %>
+							    <%= link_to "Eliminar", admin_association_path(e), :class => 'btn btn-mini btn-danger', method: :delete, data: { confirm: '¿Eliminar Elemento?' } %></td>	
+
 							<!-- para ver el path de editar, mostrar o eliminar, hacer rake routes en la consola -->
 
 						</tr>

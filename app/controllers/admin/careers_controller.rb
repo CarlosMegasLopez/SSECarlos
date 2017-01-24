@@ -38,7 +38,7 @@ class Admin::CareersController < ApplicationController
   def update
   	@carrera=Career.find(params[:id])
   		if @carrera.update career_params
-  			redirect_to ['admin', @carrera], notice: "Actualizado"
+  			redirect_to ['admin', @carrera], notice: "Carrera Actualizada"
   		else
   			render :new
   		end

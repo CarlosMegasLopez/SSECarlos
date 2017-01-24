@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 
 gem 'faker'
-gem 'jquery-datatables-rails', '~> 3.3.0'
+
 gem 'bootstrap'
 gem 'execjs'
 gem 'devise'
@@ -36,7 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'faker'
-gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'jquery-datatables-rails', '~> 3.4'
+gem 'jquery-ui-rails'
 gem 'bootstrap'
 
 group :development, :test do

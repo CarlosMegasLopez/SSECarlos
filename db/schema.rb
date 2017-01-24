@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027032128) do
+ActiveRecord::Schema.define(version: 20161121025022) do
 
   create_table "associations", force: :cascade do |t|
     t.string   "nombre"
@@ -25,6 +25,32 @@ ActiveRecord::Schema.define(version: 20161027032128) do
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "generations", force: :cascade do |t|
+    t.integer  "career_id"
+    t.string   "descripcion_generacion"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["career_id"], name: "index_generations_on_career_id"
+  end
+
+  create_table "graduates", force: :cascade do |t|
+    t.integer  "career_id"
+    t.string   "nombre_egresado"
+    t.string   "apellido_paterno_egresado"
+    t.string   "apellido_materno_egresado"
+    t.string   "sexo_egresado"
+    t.text     "colonia_egresado"
+    t.text     "calle_egresado"
+    t.string   "codigo_postal_egresado"
+    t.string   "celular_egresado"
+    t.string   "otro_telefono_egresado"
+    t.string   "correo_electronico_egresado"
+    t.string   "status_egresado"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["career_id"], name: "index_graduates_on_career_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,25 +1,20 @@
 Rails.application.routes.draw do
 
-
  devise_for :users
+
  namespace :admin do
     resources :home, only:[:index]
     resources :careers
+    resources :associations
+    resources :generations
+    resources :graduates
   end
 
   root 'home#index'
 
+  get 'home/contacto'
 
-	
-resources :associations
 
-  get 'associations/index'
-
-  get 'associations/new'
-
-  get 'associations/show'
-
-  get 'associations/edit'
 
   get 'bienvenida/index'
 
